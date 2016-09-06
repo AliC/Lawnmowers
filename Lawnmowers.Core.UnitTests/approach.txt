@@ -27,14 +27,14 @@ Nouns
 		- mowers navigate the lawn
 	- Border
 		- lawn has a border on all sides
-	Garden
+	- Garden
 		- contains rare plants, borders lawn
-	Remote Control
+	- Remote Control
 		- sends robot instructions
 
 My thoughts
 
 	- Failsafe
-		- Prevent navigation into Gardens
+		- Prevent navigation into Gardens (don't cross the border)
 		- responsibility should be with the lawn, not the robots nor the remote controls
 
