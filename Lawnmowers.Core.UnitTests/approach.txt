@@ -21,6 +21,7 @@ Nouns / Behaviours
 
 	- Robot
 	- Lawn
+		- Has a Border
 	- Position
 		- Example: 0 0 N (x y z)
 			- (x y): Co-ordinates
