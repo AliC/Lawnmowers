@@ -1,0 +1,40 @@
+﻿Input
+
+	- first line initialises lawn with co-ordinates with origin 0,0
+	- next lines come in pairs and relate to multiple robots, one pair per robot
+		- first line deploys robot by sending a position
+		- second line is a series of instructions (a simple string of letters)
+
+Output
+
+	- output for each mower should be final co-ordinates and heading
+		- Status (Co-ordinates, Heading)
+
+Nouns
+
+	- Robot
+	- Lawn
+	- Position
+		- Example: 0 0 N (x y z)
+			- (x y): Co-ordinates
+			- (z): Heading
+	- Co-ordinates
+	- Heading
+		- One of N,E,S,W
+	- Fleet
+		- (of robotic lawnmowers)
+	- Navigate
+		- mowers navigate the lawn
+	- Border
+		- lawn has a border on all sides
+	Garden
+		- contains rare plants, borders lawn
+	Remote Control
+		- sends robot instructions
+
+My thoughts
+
+	- Failsafe
+		- Prevent navigation into Gardens
+		- responsibility should be with the lawn, not the robots nor the remote controls
+
