@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Border.cs" />
     <Compile Include="Lawn.cs" />
+    <Compile Include="Mower.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
