@@ -5,12 +5,19 @@
 		- first line deploys robot by sending a position
 		- second line is a series of instructions (a simple string of letters)
 
+	- Sequence
+		- Create Lawn from co-ords (unknown source)
+		- for each robot (source: remote controller)
+			- deploy robot (Position)
+			- navigate robot (Instructions)
+
+
 Output
 
 	- output for each mower should be final co-ordinates and heading
 		- Status (Co-ordinates, Heading)
 
-Nouns
+Nouns / Behaviours
 
 	- Robot
 	- Lawn
@@ -21,6 +28,9 @@ Nouns
 	- Co-ordinates
 	- Heading
 		- One of N,E,S,W
+	- Instructions
+		- string of letters
+			- one of L,R,M
 	- Fleet
 		- (of robotic lawnmowers)
 	- Navigate
@@ -30,7 +40,7 @@ Nouns
 	- Garden
 		- contains rare plants, borders lawn
 	- Remote Control
-		- sends robot instructions
+		- sends robot Instructions
 
 My thoughts
 
