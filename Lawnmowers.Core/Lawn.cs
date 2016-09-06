@@ -20,11 +20,13 @@ namespace Lawnmowers.Core
             return new Lawn(x, y);
         }
 
-        public void DeployMower(Mower mower, Position position)
+        public void DeployMower(Mower mower, string position)
         {
-            if(WithinBorders(position))
+            Position deployToPosition = new Position(position);
+
+            if(WithinBorders(deployToPosition))
             {
-                mower.Position = position;
+                mower.Position = deployToPosition;
             }
         }
 
