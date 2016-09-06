@@ -1,12 +1,12 @@
 ﻿namespace Lawnmowers.Core
 {
-    public struct Border
+    public class Border
     {
         public int X { get; set; }
 
         public int Y { get; set; }
 
-        public Border(int x, int y) : this()
+        public Border(int x, int y)
         {
             X = x;
             Y = y;

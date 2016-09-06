@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿~using NUnit.Framework;
 
 namespace Lawnmowers.Core.UnitTests
 {
@@ -11,21 +6,25 @@ namespace Lawnmowers.Core.UnitTests
     public class MowerTests
     {
         [Test]
-        public void When_Mower_Is_Created_Then_Mower_Is_Not_Deployed()
+        public void When_Mower_Position_Is_Valid_Then_Mower_Is_Deployed()
         {
-            Mower mower = new Mower();
+            Border border = new Border(5, 5);
+            Mower mower = new Mower(border);
 
-            Assert.IsFalse(mower.IsDeployed);
-        }
-
-        [Test]
-        public void When_Mower_Is_Created_And_Position_Set_Then_Mower_Is_Deployed()
-        {
-            Mower mower = new Mower();
-            mower.Position = new Position("0 0 N");
+            mower.Deploy("1 2 N");
 
             Assert.IsTrue(mower.IsDeployed);
         }
-    }
 
+        [Test]
+        public void When_Mower_Position_Is_Not_Valid_Then_Mower_Is_Not_Deployed()
+        {
+            Border border = new Border(5, 5);
+            Mower mower = new Mower(border);
+
+            mower.Deploy("6 6 N");
+
+            Assert.IsFalse(mower.IsDeployed);
+        }
+    }
 }
