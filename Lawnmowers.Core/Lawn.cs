@@ -2,14 +2,11 @@
 {
     public class Lawn
     {
-        public int X { get; }
-
-        public int Y { get; }
+        public Border Border { get; set; }
 
         public Lawn(int x, int y)
         {
-            X = x;
-            Y = y;
+            Border = new Border(x, y);
         }
 
         public static Lawn Create(int x, int y)

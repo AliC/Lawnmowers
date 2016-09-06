@@ -19,6 +19,7 @@ namespace Lawnmowers.Core.UnitTests
             Lawn actualLawn = Lawn.Create(expectedX, expectedY);
 
             Assert.IsNotNull(actualLawn);
+            Assert.IsNotNull(actualLawn.Border);
         }
     }
 }
