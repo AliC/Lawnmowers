@@ -1,25 +1,25 @@
 ﻿Input
 
 	- first line initialises lawn with co-ordinates with origin 0,0
-	- next lines come in pairs and relate to multiple robots, one pair per robot
-		- first line deploys robot by sending a position
+	- next lines come in pairs and relate to multiple Mowers, one pair per Mower
+		- first line deploys Mower by sending a position
 		- second line is a series of instructions (a simple string of letters)
 
 	- Sequence
 		- Create Lawn from co-ords (unknown source)
-		- for each robot (source: remote controller)
-			- deploy robot (Position)
-			- navigate robot (Instructions)
+		- for each Mower (source: remote controller)
+			- deploy Mower (Position)
+			- navigate Mower (Instructions)
 
 
 Output
 
-	- output for each mower should be final co-ordinates and heading
+	- output for each Mower should be final co-ordinates and heading
 		- Status (Co-ordinates, Heading)
 
 Nouns / Behaviours
 
-	- Robot
+	- Mower
 	- Lawn
 		- Has a Border
 	- Position
@@ -35,18 +35,18 @@ Nouns / Behaviours
 	- Fleet
 		- (of robotic lawnmowers)
 	- Navigate
-		- mowers navigate the lawn
+		- Mowers navigate the lawn
 	- Border
-		- lawn has a border on all sides
+		- Lawn has a Border on all sides
 	- Garden
 		- contains rare plants, borders lawn
 	- Remote Control
-		- sends robot Instructions
+		- sends Mower Instructions
 
 My thoughts
 
 	- Failsafe
-		- Prevent robot navigation into Gardens (don't cross the border)
-		- Prevent robot deployment into Gardens (don't deploy past the border)
-		- responsibility should be with the lawn, not the robots nor the remote controls
+		- Prevent Mower navigation into Gardens (don't cross the Border)
+		- Prevent Mower deployment into Gardens (don't deploy past the Border)
+		- responsibility should be with the lawn, not the Mower nor the remote controls
 
