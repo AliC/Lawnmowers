@@ -7,8 +7,8 @@
 
 	- Sequence
 		- Create Lawn from co-ords (unknown source)
+		- Deploy Mower from Position (unknown source)
 		- for each Mower (source: remote controller)
-			- deploy Mower (Position)
 			- navigate Mower (Instructions)
 
 
