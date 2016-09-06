@@ -20,6 +20,8 @@ namespace Lawnmowers.Core.UnitTests
 
             Assert.IsNotNull(actualLawn);
             Assert.IsNotNull(actualLawn.Border);
+            Assert.That(actualLawn.Border.X, Is.EqualTo(expectedX));
+            Assert.That(actualLawn.Border.Y, Is.EqualTo(expectedY));
         }
     }
 }
