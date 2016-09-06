@@ -46,6 +46,7 @@ Nouns / Behaviours
 My thoughts
 
 	- Failsafe
-		- Prevent navigation into Gardens (don't cross the border)
+		- Prevent robot navigation into Gardens (don't cross the border)
+		- Prevent robot deployment into Gardens (don't deploy past the border)
 		- responsibility should be with the lawn, not the robots nor the remote controls
 
