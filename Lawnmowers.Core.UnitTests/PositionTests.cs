@@ -12,7 +12,7 @@ namespace Lawnmowers.Core.UnitTests
             int expectedY = 2;
             string expectedHeading = "N";
 
-            Position actualPosition = new Position("1 2 N");
+            Position actualPosition = Position.Create("1 2 N");
 
             Assert.IsNotNull(actualPosition);
             Assert.That(actualPosition.X, Is.EqualTo(expectedX));

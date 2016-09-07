@@ -8,22 +8,22 @@ namespace Lawnmowers.Core
         public int Y { get; set; }
         public string Heading { get; set; }
 
-        //TODO ADC: use one constructor to set the properties, have other constructors
-        // call into the first one (DRY)
-        public Position(string position)
-        {
-            string[] xyz = position.Split(' ');
-
-            X = Convert.ToInt32(xyz[0]);
-            Y = Convert.ToInt32(xyz[1]);
-            Heading = xyz[2];
-        }
-
         public Position(int x, int y, string heading)
         {
             X = x;
             Y = y;
             Heading = heading;
+        }
+
+        public static Position Create(string position)
+        {
+            string[] xyz = position.Split(' ');
+
+            int x = Convert.ToInt32(xyz[0]);
+            int y = Convert.ToInt32(xyz[1]);
+            string heading = xyz[2];
+
+            return new Position(x, y, heading);
         }
     }
 }

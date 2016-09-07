@@ -28,7 +28,7 @@ namespace Lawnmowers.Core
 
         public void Deploy(string position)
         {
-            Position deployToPosition = new Position(position);
+            Position deployToPosition = Position.Create(position);
 
             if (WithinBorders(deployToPosition))
             {
