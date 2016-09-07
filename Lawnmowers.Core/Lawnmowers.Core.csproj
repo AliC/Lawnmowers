@@ -41,20 +41,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Border.cs" />
-    <Compile Include="Navigators\HeadingChange.cs" />
-    <Compile Include="Navigators\HeadingChangeRight.cs" />
-    <Compile Include="Navigators\HeadingChangeLeft.cs" />
-    <Compile Include="Navigators\IMover.cs" />
+    <Compile Include="Navigators\HeadingChangers\HeadingChange.cs" />
+    <Compile Include="Navigators\HeadingChangers\HeadingChangeRight.cs" />
+    <Compile Include="Navigators\HeadingChangers\HeadingChangeLeft.cs" />
+    <Compile Include="Navigators\Movers\IMover.cs" />
     <Compile Include="Navigators\INavigator.cs" />
     <Compile Include="Lawn.cs" />
     <Compile Include="Mower.cs" />
-    <Compile Include="Navigators\MoveNorth.cs" />
-    <Compile Include="Navigators\Mover.cs" />
-    <Compile Include="Navigators\MoveSouth.cs" />
-    <Compile Include="Navigators\MoveWest.cs" />
-    <Compile Include="Navigators\MoveEast.cs" />
-    <Compile Include="Navigators\MoveForward.cs" />
-    <Compile Include="Navigators\MoverFactory.cs" />
+    <Compile Include="Navigators\Movers\MoveNorth.cs" />
+    <Compile Include="Navigators\Movers\Mover.cs" />
+    <Compile Include="Navigators\Movers\MoveSouth.cs" />
+    <Compile Include="Navigators\Movers\MoveWest.cs" />
+    <Compile Include="Navigators\Movers\MoveEast.cs" />
+    <Compile Include="Navigators\Movers\MoveForward.cs" />
+    <Compile Include="Navigators\Movers\MoverFactory.cs" />
     <Compile Include="Navigators\NavigatorFactory.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
