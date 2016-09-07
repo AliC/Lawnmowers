@@ -25,6 +25,14 @@ namespace Lawnmowers.Core.UnitTests
             remoteControl.Send("LMLMLMLMM");
 
             Assert.That(mower1.Status, Is.EqualTo("1 3 N"));
+
+            Mower mower2 = new Mower(lawn.Border);
+            mower2.Deploy("3 3 E");
+
+            remoteControl.ConnectMower(mower2);
+            remoteControl.Send("MMRMMRMRRM");
+
+            Assert.That(mower2.Status, Is.EqualTo("5 1 E"));
         }
     }
 }

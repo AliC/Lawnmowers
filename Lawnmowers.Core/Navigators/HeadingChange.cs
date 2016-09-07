@@ -21,11 +21,11 @@ namespace Lawnmowers.Core.Navigators
         {
             char newHeading;
 
-            IEnumerable<char> nextHeading = headings.SkipWhile(h => !(h == heading[0])).Skip(1);
+            IEnumerable<char> nextHeadingsInSequence = headings.SkipWhile(h => !(h == heading[0])).Skip(1);
 
-            if (nextHeading.Any())
+            if (nextHeadingsInSequence.Any())
             {
-                newHeading = nextHeading.First();
+                newHeading = nextHeadingsInSequence.First();
             }
             else
             {

@@ -6,7 +6,7 @@ namespace Lawnmowers.Core
     {
         public Border Border { get; set; }
 
-        public Lawn(int x, int y)
+        private Lawn(int x, int y)
         {
             Border = new Border(x, y);
         }
@@ -19,6 +19,5 @@ namespace Lawnmowers.Core
 
             return new Lawn(x, y);
         }
-
     }
 }
