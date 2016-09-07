@@ -1,22 +1,16 @@
 namespace Lawnmowers.Core.Navigators
 {
-    public class MoveEast : IMover
+    public class MoveEast : Mover
     {
-        private readonly Mower _mower;
-
-        public MoveEast(Mower mower)
+        public MoveEast(Mower mower) : base(mower)
         {
-            _mower = mower;
         }
 
-        public void Move()
+        public override void Move()
         {
             Position newPosition = new Position(_mower.Position.X + 1, _mower.Position.Y, _mower.Position.Heading);
 
-            if(_mower.WithinBorders(newPosition))
-            {
-                _mower.Position = newPosition;
-            }
+            Move(newPosition);
         }
     }
 }
