@@ -1,3 +1,5 @@
+using Lawnmowers.Core.Navigators;
+
 namespace Lawnmowers.Core
 {
     public class Mower
@@ -34,7 +36,7 @@ namespace Lawnmowers.Core
             }
         }
 
-        private bool WithinBorders(Position position)
+        public bool WithinBorders(Position position)
         {
             if (position.X <= _border.X && position.Y <= _border.Y)
             {
@@ -42,6 +44,15 @@ namespace Lawnmowers.Core
             }
 
             return false;
+        }
+
+        public void Navigate(string instructions)
+        {
+            foreach(char instruction in instructions)
+            {
+                INavigator navigator = NavigatorFactory.Create(this, instruction);
+                navigator.Navigate();
+            }
         }
     }
 }
