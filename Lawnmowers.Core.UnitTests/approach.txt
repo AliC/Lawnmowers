@@ -50,3 +50,6 @@ My thoughts
 		- Prevent Mower deployment into Gardens (don't deploy past the Border)
 		- responsibility should be with the lawn, not the Mower nor the remote controls
 
+Addendum
+	-	the submitted solution's design actually makes the mower responsible for Border control
+		but the mower receives the border from the lawn, so the lawn provides the constraints

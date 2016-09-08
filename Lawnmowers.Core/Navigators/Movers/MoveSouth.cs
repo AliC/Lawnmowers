@@ -1,16 +1,19 @@
 namespace Lawnmowers.Core.Navigators
 {
-    public class MoveSouth : Mover
+    public class MoveSouth : IMover
     {
-        public MoveSouth(Mower mower) : base(mower)
+        private readonly Mower _mower;
+
+        public MoveSouth(Mower mower)
         {
+            _mower = mower;
         }
 
-        public override void Move()
+        public void Move()
         {
-            Position newPosition = new Position(_mower.Position.X, _mower.Position.Y - 1, _mower.Position.Heading);
+            Position destination = new Position(_mower.Position.X, _mower.Position.Y - 1, _mower.Position.Heading);
 
-            Move(newPosition);
+            _mower.Move(destination);
         }
     }
 }

@@ -19,20 +19,14 @@ namespace Lawnmowers.Core.Navigators
 
         protected static string Next(IEnumerable<char> headings, string heading)
         {
-            char newHeading;
-
             IEnumerable<char> nextHeadingsInSequence = headings.SkipWhile(h => !(h == heading[0])).Skip(1);
 
             if (nextHeadingsInSequence.Any())
             {
-                newHeading = nextHeadingsInSequence.First();
-            }
-            else
-            {
-                newHeading = headings.First();
+                return nextHeadingsInSequence.First().ToString();
             }
 
-            return newHeading.ToString();
+            return headings.First().ToString();
         }
     }
 }

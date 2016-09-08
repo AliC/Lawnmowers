@@ -49,7 +49,6 @@
     <Compile Include="Lawn.cs" />
     <Compile Include="Mower.cs" />
     <Compile Include="Navigators\Movers\MoveNorth.cs" />
-    <Compile Include="Navigators\Movers\Mover.cs" />
     <Compile Include="Navigators\Movers\MoveSouth.cs" />
     <Compile Include="Navigators\Movers\MoveWest.cs" />
     <Compile Include="Navigators\Movers\MoveEast.cs" />

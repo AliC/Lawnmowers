@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace Lawnmowers.Core.UnitTests
@@ -12,27 +9,34 @@ namespace Lawnmowers.Core.UnitTests
         [Test]
         public void Input_And_Output()
         {
-            //TODO ADC: come up with way to define lines of input and interpret them for each usage
-            // i.e. have the array ["5 5", "1 2 N"] execute as the creation of the lawn and the deployment of the mower
-            
-            Lawn lawn = Lawn.Create("5 5");
+            string input = @"5 5
+1 2 N
+LMLMLMLMM
+3 3 E
+MMRMMRMRRM";
 
-            Mower mower1 = new Mower(lawn.Border);
-            mower1.Deploy("1 2 N");
+            string[] inputLines = input.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+
+            IList<Mower> mowers = new List<Mower>();
+
+            Lawn lawn = Lawn.Create(inputLines[0]);
 
             RemoteControl remoteControl = new RemoteControl();
-            remoteControl.ConnectMower(mower1);
-            remoteControl.Send("LMLMLMLMM");
 
-            Assert.That(mower1.Status, Is.EqualTo("1 3 N"));
+            for (int i = 1; i < inputLines.Length - 1; i += 2)
+            {
+                Mower mower = new Mower(lawn.Border);
+                mower.Deploy(inputLines[i]);
 
-            Mower mower2 = new Mower(lawn.Border);
-            mower2.Deploy("3 3 E");
+                remoteControl.ConnectMower(mower);
+                remoteControl.Send(inputLines[i + 1]);
 
-            remoteControl.ConnectMower(mower2);
-            remoteControl.Send("MMRMMRMRRM");
+                mowers.Add(mower);
+            }
 
-            Assert.That(mower2.Status, Is.EqualTo("5 1 E"));
+            Assert.That(mowers.Count, Is.EqualTo(2));
+            Assert.That(mowers[0].Status, Is.EqualTo("1 3 N"));
+            Assert.That(mowers[1].Status, Is.EqualTo("5 1 E"));
         }
     }
 }

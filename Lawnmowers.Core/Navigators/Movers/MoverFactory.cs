@@ -9,29 +9,29 @@ namespace Lawnmowers.Core.Navigators
             switch (mower.Position.Heading)
             {
                 case "N":
-                    {
-                        return new MoveNorth(mower);
-                    }
+                {
+                    return new MoveNorth(mower);
+                }
 
                 case "E":
-                    {
-                        return new MoveEast(mower);
-                    }
+                {
+                    return new MoveEast(mower);
+                }
 
                 case "S":
-                    {
-                        return new MoveSouth(mower);
-                    }
+                {
+                    return new MoveSouth(mower);
+                }
 
                 case "W":
-                    {
-                        return new MoveWest(mower);
-                    }
+                {
+                    return new MoveWest(mower);
+                }
 
                 default:
-                    {
-                        throw new Exception("Unknown heading");
-                    }
+                {
+                    throw new Exception("Unknown heading");
+                }
             }
         }
     }

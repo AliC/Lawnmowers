@@ -28,22 +28,12 @@ namespace Lawnmowers.Core
 
         public void Deploy(string position)
         {
-            Position deployToPosition = Position.Create(position);
+            Position deploymentTarget = Position.Create(position);
 
-            if (WithinBorders(deployToPosition))
+            if (WithinBorders(deploymentTarget))
             {
-                Position = deployToPosition;
+                Position = deploymentTarget;
             }
-        }
-
-        public bool WithinBorders(Position position)
-        {
-            if (position.X <= _border.X && position.Y <= _border.Y)
-            {
-                return true;
-            }
-
-            return false;
         }
 
         public void Navigate(string instructions)
@@ -54,5 +44,24 @@ namespace Lawnmowers.Core
                 navigator.Navigate();
             }
         }
+
+        public void Move(Position destination)
+        {
+            if (WithinBorders(destination))
+            {
+                Position = destination;
+            }
+        }
+
+        private bool WithinBorders(Position position)
+        {
+            if (position.X <= _border.X && position.Y <= _border.Y)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }
